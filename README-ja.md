@@ -2,6 +2,8 @@
 
 ### Languages: [English](https://github.com/sera1mu/Diskonsole/blob/main/README.md) / **日本語**
 
+[![Build](https://github.com/sera1mu/Diskonsole/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/sera1mu/Diskonsole/actions/workflows/build.yml) [![Lint](https://github.com/sera1mu/Diskonsole/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/sera1mu/Diskonsole/actions/workflows/lint.yml)
+
 テストしたバージョン: 1.18
 
 Diskonsoleは、コンソールのログをDiscordのチャンネルに送信したり、そのチャンネルからコマンドを実行することができるSpigot/Paperプラグインです。
