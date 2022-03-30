@@ -2,6 +2,7 @@ package me.seraimu.diskonsole.jda
 
 import me.scarsz.jdaappender.ChannelLoggingHandler
 import me.seraimu.diskonsole.Diskonsole
+import me.seraimu.diskonsole.config.ChatSetting
 import me.seraimu.diskonsole.config.Config
 import net.dv8tion.jda.api.JDA
 import net.dv8tion.jda.api.JDABuilder
@@ -50,18 +51,22 @@ class BotManager(private val token: String, private val consoleChannelId: Long, 
             // Attach logging handler
             val consoleChannel = this.bot.getTextChannelById(consoleChannelId)
 
-            if(consoleChannel == null) {
+            if (consoleChannel == null) {
                 Diskonsole.PLUGIN.disablePlugin()
 
                 throw Throwable("Failed to get console channel from bot.")
             }
 
+            val chatSettings = Config.CHAT_SETTINGS
+
             this.loggingHandler = ChannelLoggingHandler({
                 consoleChannel
             }) {
-                it.isColored = true
-                it.isSplitCodeBlockForLinks = false
-                it.isAllowLinkEmbeds = true
+                it.isUseCodeBlocks = chatSettings[ChatSetting.IS_USE_CODE_BLOCKS]!!
+                it.isSplitCodeBlockForLinks = chatSettings[ChatSetting.IS_SPLIT_CODE_BLOCK_FOR_LINKS]!!
+                it.isAllowLinkEmbeds = chatSettings[ChatSetting.IS_ALLOW_LINK_EMBEDS]!!
+                it.isColored = chatSettings[ChatSetting.IS_COLORED]!!
+                it.isTruncateLongItems = chatSettings[ChatSetting.IS_TRUNCATE_LONG_ITEMS]!!
             }.attachLog4jLogging().schedule()
 
             logger.info("Attached ChannelLoggingHandler.")

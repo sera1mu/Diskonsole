@@ -9,3 +9,14 @@ consoleChannelId: 000000000000000000
 # Allow or disallow execution of commands from the console channel
 # コンソールチャンネルからのコマンド実行を許可するか否か
 allowDispatchCommand: true
+
+# Settings for messages to be sent
+# 送信されるメッセージの設定
+chatSettings:
+  # TODO(@sera1mu): mapLoggerName
+  # See https://github.com/Scarsz/JDAAppender/blob/794d25d5179e0092927fdf22fd7c194da8966a77/src/main/java/me/scarsz/jdaappender/ChannelLoggingHandler.java
+  isUseCodeBlocks: true
+  isSplitCodeBlockForLinks: false
+  isAllowLinkEmbeds: true
+  isColored: true
+  isTruncateLongItems: true

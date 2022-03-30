@@ -42,9 +42,12 @@ class Diskonsole : JavaPlugin() {
     }
 
     fun disablePlugin() {
-        Bukkit.getScheduler().runTask(this, Runnable {
-            Bukkit.getPluginManager().disablePlugin(this)
-        })
+        Bukkit.getScheduler().runTask(
+            this,
+            Runnable {
+                Bukkit.getPluginManager().disablePlugin(this)
+            }
+        )
     }
 
     private fun loadConfiguration(vararg configurations: Configuration) = configurations.forEach { it.init(this) }
