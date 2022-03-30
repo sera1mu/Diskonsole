@@ -10,6 +10,7 @@ version = "1.0.0-SNAPSHOT"
 repositories {
     mavenCentral()
     maven("https://papermc.io/repo/repository/maven-public/")
+    maven("https://nexus.scarsz.me/content/repositories/releases/")
 }
 
 java {
@@ -49,6 +50,7 @@ configure<com.diffplug.gradle.spotless.SpotlessExtension> {
 
 dependencies {
     implementation(kotlin("stdlib"))
+    implementation("me.scarsz:jdaappender:1.0.2-SNAPSHOT")
     compileOnly("io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT")
 }
 
