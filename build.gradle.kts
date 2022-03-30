@@ -59,6 +59,12 @@ tasks {
         dependsOn("shadowJar")
     }
 
+    compileKotlin {
+        kotlinOptions {
+            jvmTarget = "17"
+        }
+    }
+
     processResources {
         filteringCharset = "UTF-8"
         from(sourceSets["main"].resources.srcDirs) {
