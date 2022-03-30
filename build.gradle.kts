@@ -11,6 +11,7 @@ repositories {
     mavenCentral()
     maven("https://papermc.io/repo/repository/maven-public/")
     maven("https://nexus.scarsz.me/content/repositories/releases/")
+    maven("https://m2.dv8tion.net/releases")
 }
 
 java {
@@ -51,6 +52,9 @@ configure<com.diffplug.gradle.spotless.SpotlessExtension> {
 dependencies {
     implementation(kotlin("stdlib"))
     implementation("me.scarsz:jdaappender:1.0.2-SNAPSHOT")
+    implementation("net.dv8tion:JDA:5.0.0-alpha.9") {
+        exclude("club.minnced", "opus-java")
+    }
     compileOnly("io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT")
 }
 
