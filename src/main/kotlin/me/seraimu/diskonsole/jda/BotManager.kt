@@ -49,7 +49,12 @@ class BotManager(private val token: String, private val consoleChannelId: Long, 
         if (event is ReadyEvent) {
             // Attach logging handler
             val consoleChannel = this.bot.getTextChannelById(consoleChannelId)
-                ?: throw Throwable("Failed to get console channel from bot.")
+
+            if(consoleChannel == null) {
+                Diskonsole.PLUGIN.disablePlugin()
+
+                throw Throwable("Failed to get console channel from bot.")
+            }
 
             this.loggingHandler = ChannelLoggingHandler({
                 consoleChannel

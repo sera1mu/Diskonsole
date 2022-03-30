@@ -28,14 +28,7 @@ class Diskonsole : JavaPlugin() {
             botManager = it
         }.onFailure {
             logger.severe("Failed to init BotManager: ${it.stackTraceToString()}")
-
-            Bukkit.getScheduler().runTask(
-                this,
-                Runnable {
-                    Bukkit.getPluginManager().disablePlugin(this)
-                }
-            )
-
+            disablePlugin()
             return
         }
 
@@ -46,6 +39,12 @@ class Diskonsole : JavaPlugin() {
         botManager?.shutdown()
 
         logger.info("Disabled Diskonsole plugin.")
+    }
+
+    fun disablePlugin() {
+        Bukkit.getScheduler().runTask(this, Runnable {
+            Bukkit.getPluginManager().disablePlugin(this)
+        })
     }
 
     private fun loadConfiguration(vararg configurations: Configuration) = configurations.forEach { it.init(this) }
