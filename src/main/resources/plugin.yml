@@ -1,5 +1,6 @@
 name: @name@
 version: @version@
+api-version: 1.18
 description: Control Spigot/Paper server console from Discord
 load: STARTUP
 author: Seraimu
