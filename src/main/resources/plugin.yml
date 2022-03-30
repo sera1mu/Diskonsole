@@ -1,0 +1,6 @@
+name: @name@
+version: @version@
+description: Control Spigot/Paper server console from Discord
+load: STARTUP
+author: Seraimu
+main: me.seraimu.diskonsole.Diskonsole
