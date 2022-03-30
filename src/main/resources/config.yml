@@ -1,0 +1,11 @@
+# Bot token to be used
+# 使用するBotのトークン
+token: TOKEN HERE
+
+# ID of the channel to which console logs are sent
+# コンソールのログが送信されるチャンネルのID
+consoleChannelId: 000000000000000000
+
+# Allow or disallow execution of commands from the console channel
+# コンソールチャンネルからのコマンド実行を許可するか否か
+allowDispatchCommand: true
