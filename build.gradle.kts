@@ -58,4 +58,14 @@ tasks {
     build {
         dependsOn("shadowJar")
     }
+
+    processResources {
+        filteringCharset = "UTF-8"
+        from(sourceSets["main"].resources.srcDirs) {
+            include("**/*.yml")
+            duplicatesStrategy = DuplicatesStrategy.INCLUDE
+            filter<org.apache.tools.ant.filters.ReplaceTokens>("tokens" to mapOf("version" to project.version))
+            filter<org.apache.tools.ant.filters.ReplaceTokens>("tokens" to mapOf("name" to project.name))
+        }
+    }
 }
