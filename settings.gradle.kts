@@ -1,2 +1,1 @@
-rootProject.name = "diskonsole"
-
+rootProject.name = "Diskonsole"
