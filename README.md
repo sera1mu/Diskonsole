@@ -4,7 +4,7 @@
 
 [![Build](https://github.com/sera1mu/Diskonsole/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/sera1mu/Diskonsole/actions/workflows/build.yml) [![Lint](https://github.com/sera1mu/Diskonsole/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/sera1mu/Diskonsole/actions/workflows/lint.yml)
 
-Tested version: 1.18 
+Tested version: 1.18
 
 Diskonsole is a Spigot/Paper plugin that allows you to send console logs to a Discord channel and execute commands from that channel.
 
